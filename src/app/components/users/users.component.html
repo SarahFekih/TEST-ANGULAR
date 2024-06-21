@@ -1,0 +1,26 @@
+<div class="container mt-5">
+  <div class="d-flex justify-content-start mb-4">
+    <a routerLink="/" class="btn btn-outline-primary">
+      <i class="bi bi-arrow-left"></i> Go back to Home
+    </a>
+  </div>
+  <h1 class="text-center mb-4">Users List</h1>
+
+  <div *ngIf="error" class="alert alert-danger text-center" role="alert">
+    <p>{{ error }}</p>
+  </div>
+  <div *ngIf="!error">
+    <ngx-datatable
+      class="bootstrap mb-3 material"
+      [rows]="users"
+      [columns]="columns"
+      [columnMode]="'force'"
+      [headerHeight]="50"
+      [footerHeight]="50"
+      [rowHeight]="'auto'"
+      [limit]="8"
+      aria-label="Users List"
+    >
+    </ngx-datatable>
+  </div>
+</div>
